@@ -3,11 +3,11 @@ Repositorio para la asignatura de Minería de Datos
 
 ## Participantes
 
-| Nombre    | Github user|
-|-----------|-------|
+| Nombre                          | Github user                                        |
+|---------------------------------|----------------------------------------------------|
 | Elena Ballesteros Morallón      | [@elena-17](https://github.com/elena-17)
 | Antonio Gómez Jimeno            | [@AntonioGomez03](https://github.com/AntonioGomez03)
-| Sergio Herreros Fernández       | 
+| Sergio Herreros Fernández       | [@SergioHerreros](https://github.com/SERGI0HERREROS)
 | Francisco Javier Luna Ortiz     | [@Lunao01](https://github.com/Lunao01)
 | Pedro Sánchez Martín            | [@pedrosanchez16](https://github.com/pedrosanchez16)
 
