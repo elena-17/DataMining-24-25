@@ -60,46 +60,39 @@ for lat in np.arange(INITIAL_LATITUDE, FINAL_LATITUDE, 0.25):
         try:
             driver.find_element(By.ID, "btninputLatLon").click()
             time.sleep(2)
-            # Simula clic en el botón para ver el gráfico (actualización dinámica)
-            visualizar = driver.find_element(By.ID, "btviewPVGridGraph")
-            driver.execute_script("arguments[0].click();", visualizar)
+            # Simulate the click on the "Visualize" button
+            visualize = driver.find_element(By.ID, "btviewPVGridGraph")
+            driver.execute_script("arguments[0].click();", visualize)
 
-            # Esperar unos segundos para que el gráfico se cargue
+            # Wait for the page to load
             time.sleep(2)
 
             no_data = driver.find_element(By.ID, "tr_nodata")
             print("No data")
-        except:
-            # Ahora identificamos la serie en el gráfico y simulamos el movimiento del ratón
-            # Para este ejemplo vamos a usar las barras del gráfico que aparecen en el div de Highcharts
-            grafico = driver.find_element(By.CLASS_NAME, "highcharts-series-group")
+        except:  # If there is no no_data element in the page
+            # Find the element that contains the graph
+            graph = driver.find_element(By.CLASS_NAME, "highcharts-series-group")
 
-            # Simular la acción de pasar el ratón sobre un elemento (usando ActionChains)
+            # Create an action chain
             action = ActionChains(driver)
 
-            # Obtener todos los rectángulos (barras) del gráfico
-            rectangulos = grafico.find_elements(By.TAG_NAME, "rect")
+            # Find all the rectangles in the graph
+            rectangulos = graph.find_elements(By.TAG_NAME, "rect")
 
-            # print("COORDENADAS: ", latitud, longitud)
-
-            # Iterar sobre cada rectángulo y simular el hover
+            # Iterate over the rectangles
             for rect in rectangulos:
                 try:
-                    # Simula el hover sobre el rectángulo (barra del gráfico)
+                    # Move the mouse to the rectangle
                     action.move_to_element(rect).perform()
 
-                    # Extraer el tooltip que aparece al hacer hover
+                    # Extract the tooltip text
                     tooltip = driver.find_element(By.CLASS_NAME, "highcharts-tooltip")
                     tooltip_text = tooltip.text
-                    # print(tooltip_text)
 
-                    # Obtener comunidad autónoma y municipio
+                    # Obtain the autonomous community and the province
                     comunidad_autonoma, municipio = obtain_CA_and_Province(lat, lon)
-                    # print(
-                    #     f"Comunidad Autónoma: {comunidad_autonoma}, Municipio: {municipio}"
-                    # )
 
-                    # Escribir la información en el archivo CSV
+                    # Write the data to a CSV file
                     with open(OUTPUT_PATH, mode="a", newline="") as file:
                         writer = csv.writer(file)
                         writer.writerow(
@@ -115,5 +108,5 @@ for lat in np.arange(INITIAL_LATITUDE, FINAL_LATITUDE, 0.25):
                 except:
                     continue
 
-# Cerrar el navegador
+# Close the driver
 driver.quit()
