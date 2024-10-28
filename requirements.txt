@@ -1,3 +1,4 @@
 selenium==4.25.0
 requests==2.32.3
 geopy==2.4.1
+configparser==7.1.0
