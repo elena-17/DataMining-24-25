@@ -1,0 +1,2 @@
+* text=auto eol=lf
+*.ipynb filter=strip-notebook-output
