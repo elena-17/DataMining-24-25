@@ -1,5 +1,7 @@
 # DataMining 24-25
 Repositorio para la asignatura de Minería de Datos
+> [!NOTE]  
+> Más información en la Wiki del proyecto.
 
 ## Participantes
 
@@ -14,3 +16,8 @@ Repositorio para la asignatura de Minería de Datos
 ## Objetivo
 
 El objetivo principal es analizar el uso y la rentabilidad de las energías renovables en cada Comunidad Autónoma de España. A través de la aplicación del proceso KDD, se busca identificar los perfiles demográficos y socioeconómicos de las personas que utilizan dispositivos de energía renovable.
+
+## Progreso
+
+Ir al apartado `Projects` o hacer click en este [link](https://github.com/users/elena-17/projects/2)
+
