@@ -32,6 +32,7 @@ Ir al apartado `Projects` o hacer click en este [link](https://github.com/users/
 │   └── silver
 ├── docs
 ├── git
+├── profiling
 ├── src
 └── webscraping
 ```
@@ -39,6 +40,7 @@ Ir al apartado `Projects` o hacer click en este [link](https://github.com/users/
 * `data`: Contiene archivos .csv de los datos en bruto (raw), los datos procesados (silver) y los datos finales (golden).
 * `docs`: Documentación del proyecto.
 * `git`: Archivos de configuración de git para eliminar la salida de Jupyter y evitar conflictos en los commits.
+* `profiling`: Informes de profiling de las tarjetas de datos.
 * `src`: Notebooks de Jupyter con la limpieza y análisis de los datos.
 * `webscraping`: Proyecto de webscraping para obtener datos de producción eléctrica fotovoltaica.
 
